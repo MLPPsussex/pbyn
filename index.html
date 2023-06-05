@@ -5,12 +5,12 @@
     <br>
       <canvas id="Canvas1" width="150" height="150" style="border:2px solid #d3d3d3"></canvas>
     <script>
-import { products } from 'wix-stores.v2';
+//import { products } from 'wix-stores.v2';
    var c1 = document.getElementById("Canvas1")
     var ct1 = c1.getContext("2d")
      const txt = document.getElementById("urltext")
      var img =new Image()
-     img.src="panda400.png"
+     img.src="https://cdn.leonardo.ai/users/0e8276ab-02bb-4150-a141-96f6401e19d9/generations/dde5db44-beb2-41a4-ac4e-3ec2c59aec12/Leonardo_Diffusion_panda_0.jpg"
      setTimeout( enter,1500)
     ct1.fillRect(50,50,50,50)
       
@@ -23,7 +23,7 @@ import { products } from 'wix-stores.v2';
     ct1.drawImage(img,0,0,150,150)
   }
       
- async function addProductMedia(id, media) {
+/* async function addProductMedia(id, media) {
    try {
      const result = await products.addProductMedia(id, media);
 
@@ -32,7 +32,7 @@ import { products } from 'wix-stores.v2';
      console.error(error);
      // Handle the error
    }
- }
+ }*/
     </script>
   </body>
 </html>
