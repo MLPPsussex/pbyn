@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+     <textarea name="text" id="urltext" cols="80" rows="1"></textarea>
+    <br>
+      <canvas id="Canvas1" width="200" height="140" style="border:2px solid #d3d3d3"></canvas>
+    <script>
+import { products } from 'wix-stores.v2';
+   var c1 = document.getElementById("Canvas1")
+    var ct1 = c1.getContext("2d")
+    ct1.fillRect(50,50,50,50)
+ async function addProductMedia(id, media) {
+   try {
+     const result = await products.addProductMedia(id, media);
+
+     return result;
+   } catch (error) {
+     console.error(error);
+     // Handle the error
+   }
+ }
+    </script>
+  </body>
+</html>
+  
