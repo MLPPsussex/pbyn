@@ -39,7 +39,9 @@
       // Draw a rectangle with the average color
       ct1.fillStyle = avgColor;
       ct1.clearRect(i * blockWidth, j * blockHeight, blockWidth, blockHeight);
-      ct1.arc(i*blockWidth+r, j*blockHeight+r, r, 0, 2 * Math.PI);
+      ct1.beginPath()
+      ct1.arc(i*blockWidth +r, j*blockHeight +r, r, 0, 2*Math.PI);
+      ct1.fill();
    //   ct1.fillRect(i * blockWidth, j * blockHeight, blockWidth, blockHeight);
     }
   }
