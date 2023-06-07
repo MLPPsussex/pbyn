@@ -40,7 +40,7 @@
       ct1.fillStyle = avgColor;
       ct1.clearRect(i * blockWidth, j * blockHeight, blockWidth, blockHeight);
       ct1.beginPath()
-      ct1.arc(i*blockWidth +r, j*blockHeight +r, r+ .2*Math.random(), 0, 2*Math.PI);
+      ct1.arc(i*blockWidth +r +.1*Math.random(), j*blockHeight +r+ .1*Math.random(), r+ .1*Math.random(), 0, 2*Math.PI);
       ct1.fill();
    //   ct1.fillRect(i * blockWidth, j * blockHeight, blockWidth, blockHeight);
     }
