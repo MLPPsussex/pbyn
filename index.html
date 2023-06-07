@@ -11,28 +11,65 @@
      const txt = document.getElementById("urltext")
      var img =new Image()
      img.src="https://cdn.leonardo.ai/users/0e8276ab-02bb-4150-a141-96f6401e19d9/generations/dde5db44-beb2-41a4-ac4e-3ec2c59aec12/Leonardo_Diffusion_panda_0.jpg"
-     setTimeout( enter,1500)
+     setTimeout( enter,1000)
     ct1.fillRect(50,50,50,50)
       
       
   function enter(){
     txt.value="Panda"
-    setTimeout(disp,2000)
+    setTimeout(disp,1500)
+    setTimeout(dispb,2200)
   }
   function disp(){
-    ct1.drawImage(img,0,0,150,150)
+    ct1.drawImage(img,0,0,400,400)
   }
       
-/* async function addProductMedia(id, media) {
-   try {
-     const result = await products.addProductMedia(id, media);
+  function dispb() {
+  var blockSize = 4; // Size of each block
+  var numBlocks = 100; // Number of blocks in each dimension
+  var blockWidth = 400 / numBlocks; // Width of each block
+  var blockHeight = 400 / numBlocks; // Height of each block
 
-     return result;
-   } catch (error) {
-     console.error(error);
-     // Handle the error
-   }
- }*/
+  // Loop through each block
+  for (var i = 0; i < numBlocks; i++) {
+    for (var j = 0; j < numBlocks; j++) {
+      // Calculate the average color for the current block
+      var avgColor = getAverageColor(i * blockSize, j * blockSize, blockSize, blockSize);
+
+      // Draw a rectangle with the average color
+      ct1.fillStyle = avgColor;
+      ct1.fillRect(i * blockWidth, j * blockHeight, blockWidth, blockHeight);
+    }
+  }
+}
+
+// Helper function to calculate the average color of a given rectangular region
+function getAverageColor(x, y, width, height) {
+  var imageData = ct1.getImageData(x, y, width, height);
+  var data = imageData.data;
+  var numPixels = data.length / 4; // Divide by 4 because each pixel is represented by 4 values (RGBA)
+
+  var avgR = 0;
+  var avgG = 0;
+  var avgB = 0;
+
+  // Calculate the sum of red, green, and blue values for each pixel
+  for (var i = 0; i < data.length; i += 4) {
+    avgR += data[i];
+    avgG += data[i + 1];
+    avgB += data[i + 2];
+  }
+
+  // Calculate the average color values
+  avgR = Math.round(avgR / numPixels);
+  avgG = Math.round(avgG / numPixels);
+  avgB = Math.round(avgB / numPixels);
+
+  // Return the average color as a string in the RGB format
+  return 'rgb(' + avgR + ', ' + avgG + ', ' + avgB + ')';
+}
+      
+
     </script>
   </body>
 </html>
