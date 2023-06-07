@@ -68,7 +68,9 @@ function getAverageColor(x, y, width, height) {
   avgR = Math.round(avgR / numPixels);
   avgG = Math.round(avgG / numPixels);
   avgB = Math.round(avgB / numPixels);
-
+avgR=Math.floor(avgR/5)*5
+avgG=Math.floor(avgG/5)*5
+avgB=Math.floor(avgB/5)*5  
   // Return the average color as a string in the RGB format
   return 'rgb(' + avgR + ', ' + avgG + ', ' + avgB + ')';
 }
