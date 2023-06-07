@@ -29,7 +29,7 @@
   var numBlocks = 100; // Number of blocks in each dimension
   var blockWidth = 400 / numBlocks; // Width of each block
   var blockHeight = 400 / numBlocks; // Height of each block
-
+  var r=2
   // Loop through each block
   for (var i = 0; i < numBlocks; i++) {
     for (var j = 0; j < numBlocks; j++) {
@@ -38,7 +38,9 @@
 
       // Draw a rectangle with the average color
       ct1.fillStyle = avgColor;
-      ct1.fillRect(i * blockWidth, j * blockHeight, blockWidth, blockHeight);
+      ct1.clearRect(i * blockWidth, j * blockHeight, blockWidth, blockHeight);
+      ct1.arc(i*blockWidth+r, j*blockHeight+r, r, 0, 2 * Math.PI);
+   //   ct1.fillRect(i * blockWidth, j * blockHeight, blockWidth, blockHeight);
     }
   }
 }
